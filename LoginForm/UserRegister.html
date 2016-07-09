@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MyDukaan Login</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+                        <div class="col-sm-5">
+                        	<div class="form-box">
+                        		<div class="form-top">
+
+	                        		<div class="form-top-left">
+	                        			<h3><strong>User Registration</strong></h3>
+	                        		</div>
+				                <div class="form-group">
+				                	<label class="sr-only" for="form-username">Mobile Number</label>
+				                	<input type="text" name="form-username" placeholder="Mobile Number" class="form-username form-control" id="username">
+                                                        <span id="errorMobile" class="error">Please enter Mobile Number</span>
+				                </div>
+				                <div class="form-group">
+				                	<label class="sr-only" for="form-password">Password</label>
+				                	<input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="password">
+                                                        <span id="errorPassword" class="error">Please enter Password</span>
+				                </div>
+				                <!--<div class="form-group">
+				                	<label class="sr-only" for="form-code">Registration Code</label>
+				                	<input type="password" name="form-password" placeholder="Registration Code" class="form-password form-control" id="reg-password">
+				                </div> -->
+                                                <div class="form-group">
+                                                                <button type="submit" id="submitButton" class="btn" value="register" onClick="validateUser()"><span style="font-size: 4vw"> Register</span> </button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                    
+
+        <!-- Javascript -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="UserScripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
