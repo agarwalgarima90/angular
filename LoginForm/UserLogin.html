@@ -1,94 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
 
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>MyDukaan Login</title>
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/form-elements.css">
-        <link rel="stylesheet" href="css/style.css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-
-    </head>
-
-    <body>
-		<div class="col-sm-12 col-lg-5 col-md-5 col-xs-12 log-in">
-			<h3><strong>User Log In</strong></h3>
+<!--					Registration View Starts-->
+<div class="mainPanel">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 registration-panel" ng-controller="LoginController">
+			User Log In
+			<br>
+			<br>
+			<div>
+				<form name="loginform">
+					<table width="50%" class="form-table" align="center" border="1">
+						<tbody>
+							<tr>
+								<td style="text-align: right; width: 72%">
+									<input type="text"
+										   class="roundCornerInputFirst question"
+										   placeholder="Mobile Number"
+										   name="mobileNumber"
+										   ng-model="loginMobileNumber"
+										   minlength=10
+										   maxlength=10
+										   size="35"
+										   required>
+								</td>
+								<td style="text-align: left; padding-left: 10px; width: 28%">
+									<span ng-cloak class="error" 
+										  ng-show="loginform.mobileNumber.$error.minlength"> 
+										Number should be of 10 length.
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right">
+									<input type="password"
+										   class="roundCornerInputLast key"
+										   name="password"
+										   size="35"
+										   placeholder="Password" 
+										   ng-model="loginPassword"
+										   ng-minlength="8"
+										   ng-maxlength="20"
+										   ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/"
+										   required/>
+								</td>
+								<td style="text-align: left; padding-left: 10px;">
+									<span ng-cloak ng-show="registeruserform.password.$error.pattern" class="error">
+										Must contain one lower &amp; uppercase letter, and one non alpha character
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						<table border="1" align="center" style="margin-top: 10px">
+							<tr>
+								<td>
+									<input type="checkbox">
+									Remember Me
+									
+								</td>
+							</tr>
+						</table>							
+					</table>
+				</form>
+			</div>
 		</div>
-                        <div class="col-sm-12 col-lg-5 col-md-5 col-xs-12">
-                        	<div class="form-box">
-                        		<div class="form-top">
-	                        		<div class="form-top-left">
-	                        			<h3><strong>User Log In</strong></h3>
-	                        		</div>
-				                <div class="form-group">
-				                	<label class="sr-only" for="form-username">Mobile No.</label>
-				                	<input type="text" name="form-username" placeholder="Mobile Number" class="form-username form-control" id="username">
-                                                        <span id="errorMobile" class="error">Please enter Mobile Number</span>
-				                </div>
-				                <div class="form-group">
-				                	<label class="sr-only" for="form-password">Password</label>
-				                	<input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="password">
-                                                        <span id="errorPassword" class="error">Please enter Password</span>
-				                </div>
-				                <div class="form-group">
-				                	<input type="checkbox" name="form-checkbox" id="remember-password"> Remember Me
-                                                        <a href="#" style="float:right"> Forgot your password?</a>
-				                </div>
-                                                <div class="form-group col-sm-5">
-                                                                <button type="submit" id="submitButton" class="btn" value="logIn" onClick="validateUser()"><span style="font-size: 4vw"> Log In</span> </button>
-                                                </div>
-                                                <br>
-                                                <div class="col-sm-12">
-                                                        <hr id="formhr">
-                                                </div>
-	                        	       	<div class="form-top-right circleBase type1">
-	                        			<i class="fa fa-pencil-square-o"></i>
-	                        		</div>
-                                                <div class="form-group register">
-                                                        <a href="#" onclick="loadRegistration()" > Register </a>
-                                                </div>        
-                                                </div>
-                                                </div></div>
-                    
-                <script>
-                        function loadRegistration() {
-                               window.location.href = "UserRegister.html";
-                        }
-                </script>
+		<!--					Registration View Ends-->
 
-        <!-- Javascript -->
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/jquery.backstretch.min.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="UserScripts.js"></script>
-        
-        <!--[if lt IE 10]>
-            <script src="js/placeholder.js"></script>
-        <![endif]-->
+		<!--					Activation View Starts-->
+		<div ng-cloak class="col-md-12 registration-panel" ng-controller="ActivationController" ng-show="ViewName == 'activation'">
+			Complete your Registration
+			<br>
+			<br>
+			<div>
+				<form name="activateuserform">
+					<table class="form-table" align="center" style="width: 100%">
+						<tbody>
+							<tr>
+								<td width="80%">
+									<div style="display: inline-table" class="input-group">
+										<input style="width: 60%; float: right" 
+											   type="password" 
+											   class="form-control roundCornerInputFull"
+											   size="15"
+											   ng-model="activationCode"
+											   placeholder="Enter Activation Code"
+											   required/>
+										<span class="input-group-addon"  
+											  ng-click="activateuserform.$valid && activateUser()">
+											<button style="border: none">
+												<i class="fa fa-external-link"></i>
+											</button>
+										</span>
+									</div>
+								</td>
+								<td width="40%">
+									<button class="btn btn-default btn-transparent" 
+											type="submit" 
+											value="Resend Code"
+											ng-click="resendCode()">
+										Resend Code
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									{{ activationError}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+		<!--					Activation View Ends-->
 
-    </body>
-
-</html>
+		<!--					Confirmation View Starts-->
+		<div ng-cloak class="col-md-12 registration-panel" style="border-width: 2px;" ng-controller="ConfirmationController" ng-show="ViewName == 'confirm'">
+			<table width="70%" align="center" class="table-confirmation">
+				<tbody>
+					<tr>
+						<td style="text-align: left;padding: 20px">
+							<strong>Congratulations</strong>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left; padding: 20px; font-size: 15px">
+							Thanks to register with us. Click <a href="" ng-click="loadRegistration()"> here </a> to login. After 5 seconds
+							page will automatically be redirected to User Login Page.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
